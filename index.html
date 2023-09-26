@@ -11,13 +11,24 @@
     <!-- Trường nhập để nhập các liên kết -->
     <textarea id="linkInput" placeholder="Dán liên kết ở đây..." rows="5" cols="50"></textarea>
 
+    <!-- Nút để xóa dữ liệu trong trường nhập -->
+    <button id="clearButton">Xóa dữ liệu</button>
+
     <!-- Container để hiển thị hình ảnh -->
     <div id="imageContainer"></div>
 
     <script>
-        // Lấy trường nhập và container hình ảnh bằng JavaScript
+        // Lấy trường nhập, container hình ảnh và nút xóa
         const linkInput = document.getElementById("linkInput");
         const imageContainer = document.getElementById("imageContainer");
+        const clearButton = document.getElementById("clearButton");
+
+        // Thêm sự kiện lắng nghe cho nút xóa
+        clearButton.addEventListener("click", function () {
+            // Xóa dữ liệu trong trường nhập và hình ảnh trong container
+            linkInput.value = "";
+            imageContainer.innerHTML = "";
+        });
 
         // Thêm sự kiện lắng nghe cho trường nhập
         linkInput.addEventListener("input", function () {
